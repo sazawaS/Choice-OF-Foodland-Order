@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+  
+<head>
+  <title>Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1a446e, #75e2c1) no-repeat fixed;
+    }
+    div[id="container"] {
+      padding: 20px;
+      margin: 2% auto;
+      justify-content: space-between;
+      display: flex;
+      text-align: center;
+      background-color: rgba(191, 225, 218, 0.9); 
+      border-radius: 10px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+      font-size: 1rem;
+    }
+    img{
+      padding:20px;
+      width: 25rem;
+      height: 35rem;
+      overflow: hidden; /* Prevents zoomed images from overflowing */
+      margin: 1rem; /* Adds space between menuimgs */
+      transition: transform 0.2s ease-in-out; /* Smooth zoom animation */
+    }
+    img:hover {
+      transform: scale(1.2); /* Zooms in on hover by 110% */
+    }
+
+
+    h1 {
+      background-color: rgb(255,255,255, 0.5);
+      border-radius: 10px;
+      font-weight: 900;
+      font-family: sans-serif;
+      text-align:center;
+      margin: 0 40px;
+    }
+
+    .navbar {
+      background-color: #000000;
+      color: white;
+      padding: 10px;
+    }
+
+    .navbar ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .navbar ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    .navbar ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+
+
+  </style>
+</head>
+
+  <body>
+    <nav class="navbar">
+      <ul>
+          <li><a href="/">Menu</a></li>
+          <li><a href="/order">Order</a></li>
+          <li><a href="/kitchen">Kitchen (Only for employees)</a></li>
+      </ul>
+    </nav>
+    <br> <br>
+    <h1>Choice Of Foodland Menu! Order Food <a href="/order">Here</a></h1>
+    <div id="container">
+      <br>
+      <div id =menuimg>
+        <h3>Page 1</h3>
+        <img class="imgs" src="https://cdn.discordapp.com/attachments/1127684462713503815/1299398629341138944/Page_1.png?ex=671d0ec6&is=671bbd46&hm=a5a6607a64ede71294b6f79853d7b15e6c83508f9d227fb861a86a8553452bee&">
+      </div>
+      <div id =menuimg>
+        <h3>Page 2</h3>
+        <img class="imgs" src="https://cdn.discordapp.com/attachments/1127684462713503815/1299406702663176273/Page_1_Back_Side.png?ex=671d164b&is=671bc4cb&hm=e9ba8d0395118546b537f7ce5594f0204ab821848e71a764f6e0ac8565d362f3&">
+      </div>
+      <div id =menuimg>
+        <h3>Page 3</h3>
+        <img class="imgs" src="https://cdn.discordapp.com/attachments/1127684462713503815/1299406703300968479/Page_2.png?ex=671d164b&is=671bc4cb&hm=c9af493af9d99841196cc6005bd3edca43359bc717647a13947d84d728b4d05f&">
+      </div>
+    </div>
+
+  </body>
+</html>

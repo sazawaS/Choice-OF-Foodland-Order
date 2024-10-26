@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-image:linear-gradient(rgb(7, 7, 94),rgba(0, 0, 255, 0.473));
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color:rgb(54, 253, 253);
+      }
+
+      p {
+        text-align: center;
+        font-size: 15px;
+        margin-bottom: 40px;
+        margin-top:-15px;
+        color:white;
+      }
+
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #ffffff5e;
+      }
+
+      .form-element {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: -10px;
+      }
+
+      label[id="name-label"],
+      label[id="email-label"],
+      label[id="number-label"],
+      label[id="service-label"],
+      label[id="label"],
+      label[id="label2"],
+      label[id="label3"]
+      {
+        font-weight:550;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      textarea,
+      select {
+        width: 95%;
+        max-width: 95%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 5px;
+      }
+
+      button[id="submit"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: .5s;
+      }
+
+      button[id="submit"]:hover {
+        background-color: #3e8e41;
+      }
+
+
+      div[class="messagebox"] { 
+        display:none;
+        position: fixed;
+        background-color: rgb(255, 255, 255);
+        border-radius: 5px;
+        padding:30px;
+        width:300px;
+        height:100px;
+        font-size: 25px;
+        font-weight: 600;
+        top:50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        text-align: center;
+
+        animation-name: animate;
+        animation-duration: .3s; 
+      }
+
+      div[id="darken"] {
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.3);
+      }
+
+      #close {
+        margin-top: 20px;
+        font-size:30px;
+      }
+
+      .navbar {
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+        padding: 10px;
+      }
+
+      .navbar ul {
+          list-style-type: none;
+          padding: 0;
+      }
+
+      .navbar ul li {
+          display: inline;
+          margin-right: 20px;
+      }
+
+      .navbar ul li a {
+          color: white;
+          text-decoration: none;
+      }
+
+    </style>
+    <title>Survey Demo</title>
+  </head>
+
+  <body>
+    
+    <nav class="navbar">
+      <ul>
+          <li><a href="/">Menu</a></li>
+          <li><a href="/order">Order</a></li>
+          <li><a href="/kitchen">Kitchen (Only for employees)</a></li>
+      </ul>
+    </nav>
+
+    <h1 id="title">Choice Of Foodland</h1>
+    <p id="description">Please answer all fields!</p>
+    <form action="/order" method="POST" id="survey-form"> 
+      <div class="form-element">
+        <label id="name-label" for="name">Name:</label>
+        <br>
+        <input type="text" id="name" name="name" placeholder="Enter your Name" required>  
+      </div>
+
+      <div class="form-element">
+        <label id="email-label" for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" placeholder="Enter your Email" required>  
+      </div>
+
+      <div  class="form-element">
+        <label id="number-label" for="number">Age:</label>
+        <br>
+        <input type="number" id="number" name="age" min="13" max="120" placeholder="Enter your Age" required>  
+      </div>
+        <br>
+      <div class="form-element">
+        <label id = "service-label" for="dropdown">Which service would you perfer?</label>
+        <br>
+        <select id="dropdown" name="service" required>
+          <option>Delivery</option>
+          <option>Dine-In</option>
+          <option>Take-Out</option>
+        </select>
+      </div>
+
+      <div class="form-element">
+        <label id="label">What spice level would you like?</label>
+        <br>
+        <label><input type="radio" name="spice" value="low">Low</label> <br>
+        <label><input type="radio" name="spice" value="medium">Medium</label> <br>
+        <label><input type="radio" name="spice" value="high">High</label>
+      </div>
+      
+      <div class="form-element">
+        <label id="label2">What would you like to order? (Specify flavors in the description!)</label>
+        <br>
+        <label><input type="radio" name="food" value="momo">Mo:Mo</label> <br>
+        <label><input type="radio" name="food" value="chowmein">Chowmein </label> <br>
+        <label><input type="radio" name="food" value="pizza">Pizza</label> <br>
+        <label><input type="radio" name="food" value="burger">Burger</label> <br>
+        <label><input type="radio" name="food" value="roti">Roti</label> <br>
+        <label><input type="radio" name="food" value="khana">Khana</label> <br>
+      </div>
+
+      <div class="form-element">
+        <label id="label3">Do you have any requests? (Specify flavors, and extra food items here!)</label> 
+        <br>
+        <textarea type="text" name="description" placeholder="I need a tasty chicken momo!" rows="5" cols="5"> </textarea>
+      </div>
+
+      <button  type="submit" id="submit"> Submit</button>
+      <label>Are you a employee? Visit our <a href="/kitchen" target="_blank">Kitchen</a>!</label>
+    </form>
+
+    <div id="darken"></div>
+
+    <div class="messagebox" id="messagebox">
+      <label id="textMsg">This is a message box! This is a message box! </label>
+      <button id="close">Okay!</button>
+    </div>
+
+    <script>
+
+
+
+    </script>
+
+  </body>
+
+</html>

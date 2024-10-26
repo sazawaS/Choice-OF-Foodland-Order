@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order List</title>
+  <style>
+
+    body {
+      background: linear-gradient(135deg, #1a446e, #63e7c0) no-repeat fixed;
+    }
+
+    .container {
+      margin: 20px auto; /* Add some margin for spacing */
+      width: 80%; /* Set a maximum width for responsiveness */
+      padding: 20px; /* Add some padding inside the container */
+      border: 3px solid #ddd; /* Add a thin border */
+      border-radius: 5px; /* Add some rounded corners */
+      background-color: rgba(255,255,255,0.5);
+    }
+
+    /* Style the heading */
+    h1 {
+      text-align: center; /* Center the heading */
+      margin-bottom: 15px; /* Add some space below the heading */
+    }
+
+    /* Style the order element */
+    .order {
+      margin-bottom: 20px; /* Add spacing between orders */
+      padding: 15px; /* Add some padding inside the order */
+      border: 1px solid #eee; /* Add a thin border */
+      border-radius: 5px; /* Add some rounded corners */
+      background-color: rgba(255,255,255,0.2);
+
+    }
+
+    /* Style the order title (h3) */
+    .order h3 {
+      margin-bottom: 10px; /* Add some space below the title */
+    }
+
+    /* Style the unordered list (ul) */
+    ul {
+      list-style: none; /* Remove the default bullet points */
+      padding: 0; /* Reset padding for better margins */
+      margin: 0; /* Reset margins for better spacing */
+    }
+
+    /* Style the list items (li) */
+    li {
+      margin-bottom: 5px; /* Add spacing between list items */
+    }
+
+    /* Style the link inside the list item */
+    li a {
+      color: #000000; /* Set a dark color for the link text */
+      text-decoration: none; /* Remove underline from the link */
+      font-weight: bold; /* Make the link text bold */
+      font-size:large;
+    }
+
+    /* Style the link on hover (when you hover your mouse) */
+    li a:hover {
+      text-decoration: underline; /* Add underline on hover */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>All current orders:</h1>
+    <% orders.forEach(order => { %>
+      <div class="order">
+        <h3><%= order.name %>'s Order</h3>
+        <ul>
+          <li> Name: <%= order.name %> <br> </li>
+          <li> Email: <%= order.email %> <br> </li>
+          <li> Service: <%=order.service %> <br> </li>
+          <li> Food: <%= order.food %> <br> </li>
+          <li> Spice Level: <%= order.spice %> <br> </li>
+          <li> Extra Description: <%= order.description %> <br> </li>
+          <li> ID: <%= order.id %> <br> </li>
+          <li> <a href="/kitchen/order/<%= order.id %>">View Order</a>
+        </ul>
+      </div>
+    <% }); %>
+  </div>
+</body>
+</html>

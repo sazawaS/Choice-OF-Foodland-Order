@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <style>
+
+      body {
+        background: linear-gradient(135deg, #1a446e, #63e7c0) no-repeat fixed;
+      }
+
+
+      #container {
+        width: 80%;
+        margin: 0 auto;
+        border: 3px solid #ccc;
+        border-radius: 5px;
+        background-color: rgba(255,255,255,.5);
+        padding: 20px;
+        align-items: center;
+        display: block;
+        justify-content: space-between;
+      }
+
+      #orderinfo {
+        border: 2px solid #ccc;
+        border-radius:5px;
+        padding: 20px;
+        background-color: rgba(255,255,255,.2);
+        margin-right: 20px;
+      }
+
+      #orderinfo h2 {
+        margin-bottom: 10px;
+      }
+
+      #orderinfo p {
+        margin-bottom: 5px;
+      }
+
+      .form {
+        border: 1px solid #ccc;
+        padding: 20px;
+        background-color: rgba(255,255,255,.2);
+        margin-right: 20px;
+      }
+
+      form button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin-bottom:10px;
+        cursor: pointer;
+      }
+
+      textarea {
+        margin: 0 auto;
+        padding: 5px;
+        margin-bottom: 10px;
+        color:black;
+        background-color: rgba(255,255,255,0.2);
+      }
+      
+      .form input {
+        margin-bottom: 10px;
+      }
+
+    </style>
+    <title>Order <%= id %></title>
+  </head>
+
+  <body>
+
+    <div id="container">
+      
+      <h2>Order ID: <%= id %></h2>
+
+      <div id="orderinfo">
+        
+      
+        Name: <%= name %> <br>
+        Email: <%= email %> <br>
+        Age: <%= age %> <br>
+        Service: <%= service %> <br>
+        Food: <%= food %> <br>
+        Extra Info: <br> <textarea readonly rows="3" cols="100"> <%= description %> </textarea>
+        <form  method="POST" action="/kitchen/order/<%= id %>?_method=DELETE">
+          <button type="submit">Delete Order</button> <br>
+        </form>
+      </div>
+      <br>
+      <form class="form" method="POST" action="/kitchen/order/<%= id %>?_method=DELETE">
+
+        Notes: <br> 
+        <textarea name="notes" placeholder="I might have put in a little too much salt..." rows="5" cols="100"></textarea> <br>
+        Price: <input name="price" type="number" required> <br>
+        <button type="submit">Finish Order</button> <br>
+      </form>
+    </div>
+  </body>
+</html>

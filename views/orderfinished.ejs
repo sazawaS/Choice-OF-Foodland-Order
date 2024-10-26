@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      .navbar {
+        background-color: rgba(0,0,0);
+        color: white;
+        padding: 10px;
+      }
+
+      .navbar ul {
+          list-style-type: none;
+          padding: 0;
+      }
+
+      .navbar ul li {
+          display: inline;
+          margin-right: 20px;
+      }
+
+      .navbar ul li a {
+          color: white;
+          text-decoration: none;
+      }
+
+      #container {
+        width: 60%;
+        margin: 30px auto;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background-color: rgba(255,255,255,0.8);
+        padding: 20px;
+        align-items: center;
+        text-align: center;
+        display: block;
+        justify-content: space-between;
+      }
+
+      #container button {
+        background-color: #007bff;
+        color: #fff;
+        border: 2px;
+        border-radius: 2px;
+        padding: 10px 20px;
+        margin-bottom:10px;
+        cursor: pointer;
+      }
+
+      a {
+        text-decoration: none;
+        color:rgb(0, 0, 0);
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1a446e, #75e2c1) no-repeat fixed;
+      }
+
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul>
+          <li><a href="/">Menu</a></li>
+          <li><a href="/order">Order</a></li>
+          <li><a href="/kitchen">Kitchen (Only for employees)</a></li>
+      </ul>
+    </nav>
+    
+    <div id="container">
+      <h2>Your order <%= text %> </h2>
+      <button><a href="/">Okay! Return Home.</a></button>
+    </div>
+  </body>
+</html>
