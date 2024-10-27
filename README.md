@@ -6,7 +6,7 @@ Resources:
 
 About the project:
 1) This project is a simple forum page where you can order some food to our resturant (doesn't work btw, call our resturant if you need an actual order)
-2) The orders will be shown in the kitchen. To enter the kitchen, enter the password: password123. 
+2) The orders will be shown in the kitchen. To enter the kitchen, enter the password: password123. You can delete orders and also finish them. 
 3) Also the UI is terrible.
 4) You can test it out in this website: https://order-system-tlt2.onrender.com/ (Opening takes a lot of time, probably because its a free service)
 
