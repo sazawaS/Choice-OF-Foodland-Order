@@ -1,4 +1,6 @@
-This is my first node js project after learning a little bit of web development.
+This is my first time touching web-development. I am coming from a background of python (I made tts programs to help me read webnovels), C++ (I made game hacks for minecraft), Java (I have done a bit of server-plugin development for my SMP but i am not proficient in it), and finall Lua (I've made roblox games, or atleast, tried to, since I was like 10 years old.)  
+
+I plan to document every project I have from now on like this.
 
 Resources:
 1) Basics of html and css in freecodecamp (I only did three lessons)
